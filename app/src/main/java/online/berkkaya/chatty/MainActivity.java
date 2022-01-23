@@ -95,6 +95,13 @@ public class MainActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull FriendViewHolder holder, int position, @NonNull Friend model) {
                 String uidFriend = getSnapshots().getSnapshot(position).getId();
                 holder.setList(uidFriend);
+
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goChatRoom(model.getIdChatRoom(), uidFriend);
+                    }
+                });
             }
 
             @NonNull
@@ -198,7 +205,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goChatRoom(String idChatRoom, String uidFriend) {
-
+        Intent i = new Intent(MainActivity.this, ChatActivity.class);
+        i.putExtra("idChatRoom", idChatRoom);
+        i.putExtra("uidFriend", uidFriend);
+        startActivity(i);
     }
 
     @Override
