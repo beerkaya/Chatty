@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
             finish();
+        } else if (id == R.id.action_profile) {
+            Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

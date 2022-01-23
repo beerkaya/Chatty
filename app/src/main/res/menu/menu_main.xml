@@ -4,6 +4,11 @@
     <item
         android:id="@+id/action_logout"
         android:title="Logout"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Profile"
+        app:showAsAction="always" />
 </menu>
